@@ -1,3 +1,9 @@
+:root{
+    --box-size: 100px;
+    --mark-size : calc(var(--box-size)* .9);
+}
+
+
 body{
     margin: 0;
     padding: 0;
@@ -17,7 +23,124 @@ body{
 }
 
 .box{
-    width: 100px;
-    height: 100px;
+    width: var(--box-size);
+    height: var(--box-size);
     border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.box.x::before,
+.box.x::after{
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size)*.15);
+    height: var(--mark-size);
+    background-color: black;
+
+}
+
+.box.x::before{
+    transform: rotate(45deg);
+}
+
+.box.x::after{
+    transform: rotate(-45deg);
+}
+
+.box.o::before,
+.box.o::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    
+}
+
+.box.o::before{
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: black;
+}
+
+
+.box.o::after{
+    width: calc(var(--mark-size)*.7);
+    height: calc(var(--mark-size)*.7);
+    background-color: white;
+}
+
+#Pop-up-result
+{
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid;
+    border-radius: 10px;
+    z-index: 2;
+    width: 500px;
+    max-width: 80%;
+    height: 500px;
+    max-height: 80% ;
+}
+#Pop-up-result.active{
+    transform: translate(-50%, -50%) scale(1);
+
+}
+.popup-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.popup-header .title{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.popup-header .close-btn{
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 2em;
+    font-weight: bold;
+
+}
+
+.popup-body{
+    padding: 10px 15px;
+
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0,0, 0.3);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.showResult .result{
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+.showResult .playerName {
+    font-size: 2rem;
+    font-style: italic;
 }

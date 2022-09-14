@@ -11,16 +11,32 @@
 <body>
     <h1 id="heading">Tic Tac Toe</h1>
     <div class="gamebord">
-        <div class="box box1"></div>
-        <div class="box box2"></div>
-        <div class="box box3"></div>
-        <div class="box box4"></div>
-        <div class="box box5"></div>
-        <div class="box box6"></div>
-        <div class="box box7"></div>
-        <div class="box box8"></div>
-        <div class="box box9"></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
+        <div class="box" data-cell></div>
     </div>
+
+    <div class="Pop-up result" id="Pop-up-result">
+        <div class="popup-header">
+            <div class="title">Result</div>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="popup-body">
+            <div class="showResult">
+                <div class="result"></div>
+                <div class="emoji"></div>
+                <div class="playerName"></div>
+            </div>
+        </div>
+        <button id="reset">Reset</button>
+    </div>
+    <div id="overlay"></div>
     <script src="app.js"></script>
 </body>
 </html>
