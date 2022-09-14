@@ -32,7 +32,7 @@ const displayControl = (()=>{
         
         win ?  winMsg() : drawMsg()
         function winMsg(){
-            resultMessage.querySelector('.result').textContent= 'Congratulation '
+            resultMessage.querySelector('.result').textContent= 'Congrats'
             resultMessage.querySelector('.emoji').textContent= '😎'
             resultMessage.querySelector('.playerName').textContent = "Player "+currentClass+ " Win."
         }
